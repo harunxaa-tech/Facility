@@ -1,0 +1,18 @@
+SO AKTUALISIERST DU DEINE GITHUB-WEBSITE
+
+1. Diese neue index.html herunterladen.
+2. In deinem GitHub-Repository die alte index.html öffnen.
+3. Auf das Stiftsymbol (Bearbeiten) klicken.
+4. Den gesamten alten Inhalt löschen.
+5. Den Inhalt aus INDEX_HTML_ZUM_COPY_PASTE.txt komplett einfügen.
+6. Unten auf "Commit changes" klicken.
+7. 1–3 Minuten warten und die Website neu laden.
+
+NEU IN DIESER VERSION:
+- Logo oben deutlich größer
+- professionellere Startseite
+- stärkerer 3D-Hero-Effekt
+- bessere Vorher/Nachher-Sektion mit Schieberegler
+- jede Leistung einzeln klickbar
+- schönes Detailfenster mit Bild, Kurztext und Vorteilen
+- hochwertige Hover- und Scroll-Animationen
