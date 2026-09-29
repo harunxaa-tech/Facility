@@ -23,3 +23,7 @@ Die Startseiten-Karten Gelato, Steinofenpizza und Pasta sind vollständig klickb
 - Alle Bestell-CTAs führen innerhalb der Demo auf diese Seite.
 - Mobile Bottom-Bar zeigt nur noch „Online bestellen“.
 - „Anrufen“ sitzt im mobilen Menü direkt unter „Online bestellen“; die nackte Telefonnummer wurde dort entfernt.
+
+
+## v5 – Bestellsystem
+Alle Bestell-Buttons verlinken direkt auf https://eiscafe-delfino.de/bestellen/. Die vorherige iframe-Einbettung wurde entfernt, da das fremde Bestellsystem auf iOS/Safari eingebettet nicht zuverlässig bedienbar ist. `bestellen.html` dient nur noch als sichere Weiterleitung.
