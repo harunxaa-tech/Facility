@@ -1,29 +1,29 @@
-# Eiscafé Delfino – moderne Demo Website
+# Eiscafé Delfino – Modern Website Demo
 
-## GitHub Pages Upload
+Eine responsive, statische Verkaufsdemo für GitHub Pages.
 
-Diese ZIP ist absichtlich so gebaut, dass `index.html` direkt im ZIP-Hauptverzeichnis liegt.
+## Inhalt
+- `index.html` – Startseite
+- `speisekarte.html` – moderne Speisekarte mit Filter
+- `impressum.html` – übernommene Unternehmensangaben
+- `datenschutz.html` – Demo-Datenschutzhinweis
+- `404.html` – Fehlerseite
+- `assets/style.css` – komplettes Responsive Design
+- `assets/script.js` – Mobile Navigation, Scroll-Animationen und Menüfilter
+- `assets/favicon.svg`
+- `site.webmanifest`
 
+## GitHub Pages
 1. ZIP entpacken.
-2. **Den Inhalt** des Ordners hochladen – nicht einen zusätzlichen Unterordner.
-3. In GitHub müssen `index.html`, `speisekarte.html`, `impressum.html`, `datenschutz.html` direkt im Repository-Root liegen.
-4. GitHub Pages auf den Branch/Root veröffentlichen.
+2. Alle Dateien in den Root des gewünschten GitHub-Repositories hochladen.
+3. Unter **Settings → Pages** den Branch `main` und Ordner `/ (root)` auswählen.
+4. Nach kurzer Zeit ist die Demo über GitHub Pages erreichbar.
 
-Wichtig: Das komplette Design-CSS und JavaScript sind zusätzlich direkt in den HTML-Dateien eingebettet. Dadurch bleibt die Seite auch dann vollständig gestylt, wenn der `assets`-Ordner versehentlich nicht hochgeladen wird.
+## Wichtig vor einem echten Verkauf / Livegang
+- Die Website ist eine Design-Demo und enthält Bilder, die online von Unsplash bzw. der bestehenden Website geladen werden. Für die finale Kundenseite sollten die vom Betreiber freigegebenen Originalfotos lokal eingebunden werden.
+- Speisekarte, Preise, Öffnungszeiten und Unternehmensangaben wurden anhand öffentlich sichtbarer Angaben der bestehenden Website und öffentlichen Unternehmensdaten umgesetzt. Vor Veröffentlichung vom Betreiber bestätigen lassen.
+- Impressum und Datenschutz vor dem finalen Livegang rechtlich prüfen und an Hosting, Bestellsystem und tatsächlich verwendete Dienste anpassen.
+- Der Button „Online bestellen“ führt derzeit absichtlich auf das bestehende Bestellsystem von eiscafe-delfino.de. Für eine vollständige Neuentwicklung kann später ein eigenes Bestell-/Shop-System angebunden werden.
 
-Die Bilder werden für die Demo hochauflösend von den angegebenen Webquellen geladen. Für die endgültige Kundenversion sollten die final freigegebenen Originalbilder lokal im Projekt gespeichert werden.
-
-
-## v3 – Direktlinks zur Speisekarte
-Die Startseiten-Karten Gelato, Steinofenpizza und Pasta sind vollständig klickbar und öffnen direkt die passende Kategorie der Speisekarte.
-
-
-## v4 Änderungen
-- Eigene `bestellen.html` im Delfino-Look als Rahmen für das vorhandene Live-Bestellsystem.
-- Alle Bestell-CTAs führen innerhalb der Demo auf diese Seite.
-- Mobile Bottom-Bar zeigt nur noch „Online bestellen“.
-- „Anrufen“ sitzt im mobilen Menü direkt unter „Online bestellen“; die nackte Telefonnummer wurde dort entfernt.
-
-
-## v5 – Bestellsystem
-Alle Bestell-Buttons verlinken direkt auf https://eiscafe-delfino.de/bestellen/. Die vorherige iframe-Einbettung wurde entfernt, da das fremde Bestellsystem auf iOS/Safari eingebettet nicht zuverlässig bedienbar ist. `bestellen.html` dient nur noch als sichere Weiterleitung.
+## Design
+Mobile-first, aber für große Desktop-Bildschirme bis 1240 px Inhaltsbreite ausgelegt. Keine externen Schriftarten und keine Tracking-Skripte im eigenen Code.
