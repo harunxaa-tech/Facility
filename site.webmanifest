@@ -1,0 +1,9 @@
+{
+  "name": "Eiscafé Delfino",
+  "short_name": "Delfino",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4efe6",
+  "theme_color": "#f4efe6",
+  "icons": []
+}
