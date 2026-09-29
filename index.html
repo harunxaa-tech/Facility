@@ -100,6 +100,9 @@ img{max-width:100%;display:block}
 .arrow-link span{font-size:18px}
 .feature-grid{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:1fr 1fr;gap:24px}
 .feature-card{background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:0 0 0 1px var(--line);min-height:410px;display:flex;flex-direction:column}
+.feature-card-link{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.feature-card-link:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+.feature-card-link:active{transform:scale(.995)}
 .feature-card-large{grid-row:span 2;min-height:850px}
 .feature-image{background-color:#d7c7b0;flex:1;min-height:260px;background-size:cover;background-position:center;position:relative;overflow:hidden;transition:transform .55s ease}
 .feature-card:hover .feature-image{transform:scale(1.018)}
@@ -213,9 +216,8 @@ img{max-width:100%;display:block}
 .error-box h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(52px,8vw,90px);font-weight:400;line-height:.95;letter-spacing:-.04em;margin:0}
 .error-box p:not(.eyebrow){color:var(--muted);font-size:18px;margin:22px 0 30px}
 
-.reveal{opacity:1;transform:none}
-.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
-.js .reveal.visible{opacity:1;transform:none}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:none}
 
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.feature-image,.btn{transition:none}}
 
@@ -324,19 +326,12 @@ img{max-width:100%;display:block}
 }
 
 
-/* GitHub Pages hardening */
-html,body{max-width:100%;overflow-x:hidden}
-@supports (height:100dvh){.hero{min-height:100dvh}}
-@media(max-width:680px){
-  .site-header{width:100%}
-  .hero-content{width:calc(100% - 28px)}
-  .hero h1{overflow-wrap:anywhere}
-  .feature-card-large{min-height:560px}
-  .feature-image{min-height:300px}
-  .visit-card{padding:30px 24px}
-}
-
-  </style>
+/* v4 mobile CTA refinements */
+.mobile-menu .mobile-call-btn{margin-top:10px;width:100%;border-color:rgba(29,27,24,.22);color:var(--ink);background:transparent}
+.mobile-menu .mobile-call-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.mobile-orderbar.single-action{grid-template-columns:1fr;padding-left:16px;padding-right:16px}
+.mobile-orderbar.single-action .mobile-order-primary{width:100%}
+</style>
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -357,7 +352,7 @@ html,body{max-width:100%;overflow-x:hidden}
 
     <div class="header-actions">
       <a class="text-link hide-mobile" href="tel:+4989604061">089 604061</a>
-      <a class="btn btn-dark btn-small hide-mobile" href="https://eiscafe-delfino.de/bestellen/" target="_blank" rel="noopener">Online bestellen</a>
+      <a class="btn btn-dark btn-small hide-mobile" href="bestellen.html">Online bestellen</a>
       <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
         <span></span><span></span>
       </button>
@@ -370,8 +365,8 @@ html,body{max-width:100%;overflow-x:hidden}
       <a href="speisekarte.html">Speisekarte</a>
       <a href="#feiern">Feiern</a>
       <a href="#besuch">Besuch</a>
-      <a class="btn btn-accent" href="https://eiscafe-delfino.de/bestellen/" target="_blank" rel="noopener">Online bestellen</a>
-      <a class="mobile-phone" href="tel:+4989604061">089 604061</a>
+      <a class="btn btn-accent" href="bestellen.html">Online bestellen</a>
+      <a class="btn btn-outline mobile-call-btn" href="tel:+4989604061">Anrufen</a>
     </div>
   </div>
 
@@ -414,7 +409,7 @@ html,body{max-width:100%;overflow-x:hidden}
         </div>
 
         <div class="feature-grid">
-          <article class="feature-card feature-card-large reveal">
+          <a class="feature-card feature-card-large reveal feature-card-link" href="speisekarte.html#eis" aria-label="Gelato in der Speisekarte ansehen">
             <div class="feature-image gelato-img"></div>
             <div class="feature-content">
               <span class="feature-number">01</span>
@@ -423,9 +418,9 @@ html,body{max-width:100%;overflow-x:hidden}
                 <p>Von fruchtig bis cremig – Klassiker und Lieblingssorten für große und kleine Eispausen.</p>
               </div>
             </div>
-          </article>
+          </a>
 
-          <article class="feature-card reveal">
+          <a class="feature-card reveal feature-card-link" href="speisekarte.html#pizza" aria-label="Steinofenpizza in der Speisekarte ansehen">
             <div class="feature-image pizza-img"></div>
             <div class="feature-content">
               <span class="feature-number">02</span>
@@ -434,9 +429,9 @@ html,body{max-width:100%;overflow-x:hidden}
                 <p>Knuspriger Rand, kräftige Tomate, geschmolzener Käse. Einfach so, wie Pizza sein soll.</p>
               </div>
             </div>
-          </article>
+          </a>
 
-          <article class="feature-card reveal">
+          <a class="feature-card reveal feature-card-link" href="speisekarte.html#pasta" aria-label="Pasta & mehr in der Speisekarte ansehen">
             <div class="feature-image pasta-img"></div>
             <div class="feature-content">
               <span class="feature-number">03</span>
@@ -445,7 +440,7 @@ html,body{max-width:100%;overflow-x:hidden}
                 <p>Italienische Lieblingsgerichte, Antipasti und Panini – frisch, unkompliziert und voller Geschmack.</p>
               </div>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </section>
@@ -521,7 +516,7 @@ html,body{max-width:100%;overflow-x:hidden}
           <p class="eyebrow light">Heute Lust auf Italien?</p>
           <h2>Einfach bestellen.<br>Später genießen.</h2>
         </div>
-        <a class="btn btn-light btn-xl" href="https://eiscafe-delfino.de/bestellen/" target="_blank" rel="noopener">Online bestellen <span>↗</span></a>
+        <a class="btn btn-light btn-xl" href="bestellen.html">Online bestellen <span>↗</span></a>
       </div>
     </section>
   </main>
@@ -548,10 +543,7 @@ html,body{max-width:100%;overflow-x:hidden}
     </div>
   </footer>
 
-  <div class="mobile-orderbar">
-    <a href="tel:+4989604061" aria-label="Eiscafé Delfino anrufen">Anrufen</a>
-    <a class="mobile-order-primary" href="https://eiscafe-delfino.de/bestellen/" target="_blank" rel="noopener">Bestellen</a>
-  </div>
+  <div class="mobile-orderbar single-action"><a class="mobile-order-primary" href="bestellen.html">Online bestellen</a></div>
   <script>
 (() => {
   const header = document.querySelector('.site-header');
@@ -611,23 +603,45 @@ html,body{max-width:100%;overflow-x:hidden}
   }
 
   if (menuTabs.length && menuCategories.length) {
+    const validCategories = new Set(menuCategories.map(cat => cat.dataset.category));
+
+    const activateCategory = (filter, scrollToCategory = false) => {
+      menuTabs.forEach(t => t.classList.toggle('active', t.dataset.filter === filter));
+      menuCategories.forEach(cat => {
+        cat.classList.toggle('hidden', filter !== 'all' && cat.dataset.category !== filter);
+      });
+
+      if (scrollToCategory && filter !== 'all') {
+        const target = document.getElementById(filter);
+        if (target) {
+          window.setTimeout(() => {
+            const stickyTabs = document.querySelector('.menu-tabs-wrap');
+            const offset = (stickyTabs ? stickyTabs.offsetHeight : 0) + 18;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+          }, 40);
+        }
+      }
+    };
+
     menuTabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        menuTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
         const filter = tab.dataset.filter;
-        menuCategories.forEach(cat => {
-          cat.classList.toggle('hidden', filter !== 'all' && cat.dataset.category !== filter);
-        });
+        activateCategory(filter);
         if (window.innerWidth < 680) {
           const top = document.querySelector('.menu-tabs-wrap').getBoundingClientRect().bottom + window.scrollY + 16;
           window.scrollTo({ top, behavior: 'smooth' });
         }
       });
     });
+
+    const requestedCategory = decodeURIComponent(window.location.hash.slice(1));
+    if (validCategories.has(requestedCategory)) {
+      activateCategory(requestedCategory, true);
+    }
   }
 })();
 
-  </script>
+</script>
 </body>
 </html>

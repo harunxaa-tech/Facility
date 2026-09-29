@@ -12,3 +12,14 @@ Diese ZIP ist absichtlich so gebaut, dass `index.html` direkt im ZIP-Hauptverzei
 Wichtig: Das komplette Design-CSS und JavaScript sind zusätzlich direkt in den HTML-Dateien eingebettet. Dadurch bleibt die Seite auch dann vollständig gestylt, wenn der `assets`-Ordner versehentlich nicht hochgeladen wird.
 
 Die Bilder werden für die Demo hochauflösend von den angegebenen Webquellen geladen. Für die endgültige Kundenversion sollten die final freigegebenen Originalbilder lokal im Projekt gespeichert werden.
+
+
+## v3 – Direktlinks zur Speisekarte
+Die Startseiten-Karten Gelato, Steinofenpizza und Pasta sind vollständig klickbar und öffnen direkt die passende Kategorie der Speisekarte.
+
+
+## v4 Änderungen
+- Eigene `bestellen.html` im Delfino-Look als Rahmen für das vorhandene Live-Bestellsystem.
+- Alle Bestell-CTAs führen innerhalb der Demo auf diese Seite.
+- Mobile Bottom-Bar zeigt nur noch „Online bestellen“.
+- „Anrufen“ sitzt im mobilen Menü direkt unter „Online bestellen“; die nackte Telefonnummer wurde dort entfernt.

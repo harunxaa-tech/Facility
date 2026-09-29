@@ -1,12 +1,11 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#f4efe6" />
-  <meta name="description" content="Speisekarte des Eiscafé Delfino in Neubiberg: Pizza, Pasta, Antipasti, Salate, Panini und Eis." />
-  <title>Speisekarte · Eiscafé Delfino</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f4efe6">
+  <meta name="description" content="Online bestellen beim Eiscafé Delfino in Neubiberg.">
+  <title>Online bestellen · Eiscafé Delfino</title>
   <style>
 :root{
   --bg:#f4efe6;
@@ -329,101 +328,303 @@ img{max-width:100%;display:block}
 .mobile-menu .mobile-call-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .mobile-orderbar.single-action{grid-template-columns:1fr;padding-left:16px;padding-right:16px}
 .mobile-orderbar.single-action .mobile-order-primary{width:100%}
+
+
+body.order-page{overflow:hidden;background:var(--bg)}
+.order-page .site-header{background:rgba(244,239,230,.96);color:var(--ink);box-shadow:0 1px 0 var(--line);height:76px}
+.order-page .brand-mark{background:var(--ink);color:#fff}
+.order-page .menu-toggle{background:rgba(29,27,24,.08)}
+.order-stage{position:fixed;top:76px;left:0;right:0;bottom:0;background:var(--bg);display:flex;flex-direction:column}
+.order-intro{height:126px;flex:0 0 126px;padding:20px max(24px,calc((100vw - 1240px)/2));display:flex;align-items:center;justify-content:space-between;gap:28px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#f7f2e9 0%,#f3ede3 100%)}
+.order-intro-copy{min-width:0}
+.order-intro .eyebrow{margin:0 0 7px;color:var(--red)}
+.order-intro h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(32px,4vw,50px);letter-spacing:-.045em;line-height:.95;margin:0}
+.order-intro-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.order-chip{border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-size:12px;font-weight:750;background:rgba(255,255,255,.55);white-space:nowrap}
+.order-chip strong{color:var(--red)}
+.order-frame-shell{position:relative;flex:1;min-height:0;overflow:hidden;background:#fff}
+.order-frame{position:absolute;left:0;top:-92px;width:100%;height:calc(100% + 92px);border:0;background:#fff}
+.order-fallback{position:absolute;inset:auto 18px 18px 18px;z-index:3;display:flex;justify-content:center;pointer-events:none}
+.order-fallback a{pointer-events:auto;background:rgba(29,27,24,.9);color:#fff;border-radius:999px;padding:10px 16px;font-size:11px;font-weight:800;box-shadow:0 8px 30px rgba(0,0,0,.16)}
+.order-page .mobile-orderbar{display:none!important}
+.order-page .mobile-menu{z-index:1200}
+.order-page .site-header{z-index:1300}
+@media(max-width:760px){
+  body.order-page{padding-bottom:0}
+  .order-page .site-header{height:76px}
+  .order-stage{top:76px}
+  .order-intro{height:112px;flex-basis:112px;padding:16px 20px;align-items:flex-start}
+  .order-intro h1{font-size:36px}
+  .order-intro-meta{display:none}
+  .order-frame{top:-118px;height:calc(100% + 118px)}
+  .order-fallback{display:none}
+}
+@media(max-width:420px){
+  .order-intro{height:104px;flex-basis:104px;padding:14px 16px}
+  .order-intro .eyebrow{font-size:9px}
+  .order-intro h1{font-size:32px}
+  .order-frame{top:-122px;height:calc(100% + 122px)}
+}
 </style>
-  <script>document.documentElement.classList.add("js");</script>
 </head>
-<body class="inner-page">
+<body class="order-page">
   <div class="grain" aria-hidden="true"></div>
-  <header class="site-header solid-header">
-    <a class="brand" href="index.html" aria-label="Eiscafé Delfino Startseite"><span class="brand-mark">D</span><span class="brand-copy"><strong>Delfino</strong><small>Gelateria · Pizzeria</small></span></a>
-    <nav class="desktop-nav" aria-label="Hauptnavigation"><a href="index.html#genuss">Genuss</a><a class="active" href="speisekarte.html">Speisekarte</a><a href="index.html#feiern">Feiern</a><a href="index.html#besuch">Besuch</a></nav>
-    <div class="header-actions"><a class="text-link hide-mobile" href="tel:+4989604061">089 604061</a><a class="btn btn-dark btn-small hide-mobile" href="bestellen.html">Online bestellen</a><button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button></div>
-  </header>
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true"><div class="mobile-menu-inner"><a href="index.html#genuss">Genuss</a><a href="speisekarte.html">Speisekarte</a><a href="index.html#feiern">Feiern</a><a href="index.html#besuch">Besuch</a><a class="btn btn-accent" href="bestellen.html">Online bestellen</a><a class="btn btn-outline mobile-call-btn" href="tel:+4989604061">Anrufen</a></div></div>
-
-  <main>
-    <section class="menu-hero">
-      <div class="container">
-        <p class="eyebrow reveal">Buon appetito</p>
-        <h1 class="reveal">Speisekarte</h1>
-        <p class="reveal">Italienische Klassiker, direkt und ohne Schnickschnack. Bestellungen zur Abholung sind laut bestehender Website zwischen 11:30 und 20:30 Uhr möglich.</p>
-        <div class="menu-hero-actions reveal"><a class="btn btn-dark" href="bestellen.html">Jetzt online bestellen</a><a class="btn btn-outline" href="tel:+4989604061">Telefonisch bestellen</a></div>
-      </div>
-    </section>
-
-    <div class="menu-tabs-wrap">
-      <div class="container menu-tabs" aria-label="Speisekarten-Kategorien">
-        <button class="menu-tab active" data-filter="all">Alles</button>
-        <button class="menu-tab" data-filter="antipasti">Antipasti</button>
-        <button class="menu-tab" data-filter="pizza">Pizza</button>
-        <button class="menu-tab" data-filter="pasta">Pasta</button>
-        <button class="menu-tab" data-filter="panini">Panini</button>
-        <button class="menu-tab" data-filter="eis">Eis</button>
-      </div>
+  <header class="site-header solid-header" id="top">
+    <a class="brand" href="index.html" aria-label="Eiscafé Delfino Startseite">
+      <span class="brand-mark">D</span>
+      <span class="brand-copy"><strong>Delfino</strong><small>Gelateria · Pizzeria</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Hauptnavigation">
+      <a href="index.html#genuss">Genuss</a>
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="index.html#feiern">Feiern</a>
+      <a href="index.html#besuch">Besuch</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-dark btn-small hide-mobile" href="tel:+4989604061">Anrufen</a>
+      <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
     </div>
+  </header>
 
-    <section class="menu-content section">
-      <div class="container menu-sections">
-        <section class="menu-category" id="antipasti" data-category="antipasti">
-          <div class="menu-category-head"><span>01</span><h2>Antipasti</h2></div>
-          <div class="menu-items">
-            <article><div><h3>Bruschetta Italiana</h3><p>Geröstetes Weißbrot · Tomaten · Rucola · Parmesan · Basilikum</p></div><strong>7,50 €</strong></article>
-            <article><div><h3>Mozzarella Caprese</h3><p>Mozzarella · Tomaten · Basilikum · Olivenöl</p></div><strong>8,90 €</strong></article>
-            <article><div><h3>Vitello tonnato</h3><p>Kalbfleisch · Thunfischcreme · Kapern</p></div><strong>13,00 €</strong></article>
-            <article><div><h3>Carpaccio di manzo</h3><p>Rindfleisch · Rucola · Parmesan</p></div><strong>14,50 €</strong></article>
-          </div>
-        </section>
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <a href="index.html#genuss">Genuss</a>
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="index.html#feiern">Feiern</a>
+      <a href="index.html#besuch">Besuch</a>
+      <a class="btn btn-accent" href="bestellen.html">Online bestellen</a>
+      <a class="btn btn-outline mobile-call-btn" href="tel:+4989604061">Anrufen</a>
+    </div>
+  </div>
 
-        <section class="menu-category" id="pizza" data-category="pizza">
-          <div class="menu-category-head"><span>02</span><h2>Pizza</h2><p>Normal 33 cm · Groß 40 cm</p></div>
-          <div class="menu-items">
-            <article><div><h3>Margherita</h3><p>Tomatensauce · Mozzarella</p></div><strong>7,50 – 14,50 €</strong></article>
-            <article><div><h3>Regina</h3><p>Champignons · Hinterschinken</p></div><strong>9,50 – 16,50 €</strong></article>
-            <article><div><h3>Diavola</h3><p>Scharfe Salami</p></div><strong>10,00 – 17,00 €</strong></article>
-            <article><div><h3>Delfino</h3><p>Hinterschinken · schwarze Oliven · rote Zwiebeln</p></div><strong>10,50 – 17,50 €</strong></article>
-            <article><div><h3>Quattro Formaggi</h3><p>Parmesan · Mozzarella · Scamorza · Gorgonzola</p></div><strong>10,50 – 17,50 €</strong></article>
-            <article><div><h3>Gamberetti</h3><p>Shrimps · Zucchini · Cocktailtomaten · Knoblauch</p></div><strong>12,50 – 19,50 €</strong></article>
-            <article><div><h3>Salmone</h3><p>Räucherlachs · Cocktailtomaten · Rucola</p></div><strong>12,50 – 19,50 €</strong></article>
-            <article><div><h3>Scampi</h3><p>Scampi · Cocktailtomaten</p></div><strong>13,50 – 20,50 €</strong></article>
-          </div>
-        </section>
-
-        <section class="menu-category" id="pasta" data-category="pasta">
-          <div class="menu-category-head"><span>03</span><h2>Pasta</h2></div>
-          <div class="menu-items">
-            <article><div><h3>Spaghetti Aglio e Olio</h3><p>Knoblauch · Olivenöl · Peperoncino</p></div><strong>8,50 €</strong></article>
-            <article><div><h3>Spaghetti Carbonara</h3><p>Speck · Ei · Parmesan</p></div><strong>10,50 €</strong></article>
-            <article><div><h3>Spaghetti Gamberetti</h3><p>Knoblauch · Olivenöl · Paprika · Garnelen</p></div><strong>14,50 €</strong></article>
-            <article><div><h3>Spaghetti Scampi</h3><p>Scampi · Cocktailtomaten</p></div><strong>15,90 €</strong></article>
-            <article><div><h3>Tagliatelle Salmone</h3><p>Lachs · Spinat</p></div><strong>12,50 €</strong></article>
-            <article><div><h3>Gnocchi Sorrentina</h3><p>Büffelmozzarella · Tomatensauce</p></div><strong>11,50 €</strong></article>
-          </div>
-        </section>
-
-        <section class="menu-category" id="panini" data-category="panini">
-          <div class="menu-category-head"><span>04</span><h2>Panini</h2><p>Aus hausgemachtem Brot</p></div>
-          <div class="menu-items">
-            <article><div><h3>Panino Caprese</h3><p>Frischkäse · Mozzarella · grüner Salat</p></div><strong>11,00 €</strong></article>
-            <article><div><h3>Panino Parma</h3><p>Frischkäse · Mozzarella · Salat · Parmaschinken</p></div><strong>11,00 €</strong></article>
-            <article><div><h3>Panino Tonno</h3><p>Thunfisch · Thunfischcreme · rote Zwiebeln · Tomate</p></div><strong>11,00 €</strong></article>
-          </div>
-        </section>
-
-        <section class="menu-category" id="eis" data-category="eis">
-          <div class="menu-category-head"><span>05</span><h2>Gelato</h2></div>
-          <div class="menu-items">
-            <article><div><h3>1 Kugel</h3><p>Im Becher · verschiedene Sorten</p></div><strong>2,00 €</strong></article>
-            <article><div><h3>2 Kugeln</h3><p>Im Becher · verschiedene Sorten</p></div><strong>4,00 €</strong></article>
-            <article class="menu-note"><div><h3>Sortenauswahl</h3><p>Amarena · Erdbeere · Haselnuss · Himbeere · Joghurt · Keks · Malaga · Mango · Maracuja · Pistazie · Schoko · Stracciatella · Vanille · Weiße Schokolade · Zitrone</p></div></article>
-          </div>
-        </section>
+  <main class="order-stage">
+    <section class="order-intro" aria-label="Online bestellen">
+      <div class="order-intro-copy">
+        <p class="eyebrow">Direkt bei Delfino</p>
+        <h1>Online bestellen.</h1>
+      </div>
+      <div class="order-intro-meta" aria-label="Bestellinformationen">
+        <span class="order-chip"><strong>11:30–20:30</strong> Bestellzeit</span>
+        <span class="order-chip">Abholung & Bestellung</span>
       </div>
     </section>
-
-    <section class="cta-band compact-cta"><div class="container cta-band-inner reveal"><div><p class="eyebrow light">Schon entschieden?</p><h2>Bestellen & abholen.</h2></div><a class="btn btn-light btn-xl" href="bestellen.html">Online bestellen <span>↗</span></a></div></section>
+    <section class="order-frame-shell" aria-label="Delfino Bestellsystem">
+      <iframe class="order-frame" src="https://eiscafe-delfino.de/bestellen/" title="Eiscafé Delfino Online-Bestellung" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="order-fallback"><a href="https://eiscafe-delfino.de/bestellen/" target="_blank" rel="noopener">Bestellsystem in neuem Fenster öffnen ↗</a></div>
+    </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><span class="brand-mark">D</span><div><strong>Delfino</strong><small>Gelateria · Pizzeria</small></div></div><div class="footer-nav"><a href="index.html">Startseite</a><a href="tel:+4989604061">Anrufen</a><a href="https://www.instagram.com/eiscafedelfino/" target="_blank" rel="noopener">Instagram</a></div><div class="footer-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Eiscafé Delfino</span><span>Hauptstraße 55 · 85579 Neubiberg</span></div></footer>
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Eiscafé Delfino Startseite">
+      <span class="brand-mark">D</span>
+      <span class="brand-copy"><strong>Delfino</strong><small>Gelateria · Pizzeria</small></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Hauptnavigation">
+      <a href="#genuss">Genuss</a>
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="#feiern">Feiern</a>
+      <a href="#besuch">Besuch</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="text-link hide-mobile" href="tel:+4989604061">089 604061</a>
+      <a class="btn btn-dark btn-small hide-mobile" href="bestellen.html">Online bestellen</a>
+      <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <a href="#genuss">Genuss</a>
+      <a href="speisekarte.html">Speisekarte</a>
+      <a href="#feiern">Feiern</a>
+      <a href="#besuch">Besuch</a>
+      <a class="btn btn-accent" href="bestellen.html">Online bestellen</a>
+      <a class="btn btn-outline mobile-call-btn" href="tel:+4989604061">Anrufen</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-media" role="img" aria-label="Italienisches Gelato in einer Eiswaffel"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <div class="hero-kicker reveal">Neubiberg · Seit vielen Jahren ein Treffpunkt</div>
+        <h1 class="reveal">Ein kleines Stück<br><em>Italia</em> vor der Tür.</h1>
+        <p class="hero-lead reveal">Cremiges Gelato, knusprige Steinofenpizza und italienische Küche – unkompliziert, herzlich und mitten in Neubiberg.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-light" href="speisekarte.html">Speisekarte entdecken</a>
+          <a class="btn btn-glass" href="#besuch">Vorbeikommen</a>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#intro" aria-label="Weiter nach unten">
+        <span>Entdecken</span><i></i>
+      </a>
+    </section>
+
+    <section class="intro section" id="intro">
+      <div class="container intro-grid">
+        <div class="eyebrow reveal">La dolce vita in Neubiberg</div>
+        <div>
+          <h2 class="section-title reveal">Gelato. Pizza. Pasta.<br><span>Und Zeit zum Genießen.</span></h2>
+          <p class="big-copy reveal">Delfino verbindet die Leichtigkeit einer italienischen Gelateria mit ehrlicher Küche. Ob eine schnelle Kugel Eis, Cappuccino in der Sonne oder Pizza am Abend – hier darf der Alltag kurz Pause machen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase section" id="genuss">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Unsere Klassiker</p>
+            <h2 class="section-title compact">Drei Gründe,<br>länger zu bleiben.</h2>
+          </div>
+          <a class="arrow-link" href="speisekarte.html">Zur Speisekarte <span>↗</span></a>
+        </div>
+
+        <div class="feature-grid">
+          <a class="feature-card feature-card-large reveal feature-card-link" href="speisekarte.html#eis" aria-label="Gelato in der Speisekarte ansehen">
+            <div class="feature-image gelato-img"></div>
+            <div class="feature-content">
+              <span class="feature-number">01</span>
+              <div>
+                <h3>Gelato</h3>
+                <p>Von fruchtig bis cremig – Klassiker und Lieblingssorten für große und kleine Eispausen.</p>
+              </div>
+            </div>
+          </a>
+
+          <a class="feature-card reveal feature-card-link" href="speisekarte.html#pizza" aria-label="Steinofenpizza in der Speisekarte ansehen">
+            <div class="feature-image pizza-img"></div>
+            <div class="feature-content">
+              <span class="feature-number">02</span>
+              <div>
+                <h3>Steinofenpizza</h3>
+                <p>Knuspriger Rand, kräftige Tomate, geschmolzener Käse. Einfach so, wie Pizza sein soll.</p>
+              </div>
+            </div>
+          </a>
+
+          <a class="feature-card reveal feature-card-link" href="speisekarte.html#pasta" aria-label="Pasta & mehr in der Speisekarte ansehen">
+            <div class="feature-image pasta-img"></div>
+            <div class="feature-content">
+              <span class="feature-number">03</span>
+              <div>
+                <h3>Pasta & mehr</h3>
+                <p>Italienische Lieblingsgerichte, Antipasti und Panini – frisch, unkompliziert und voller Geschmack.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-preview section">
+      <div class="container menu-preview-grid">
+        <div class="menu-copy reveal">
+          <p class="eyebrow">Ein Blick in die Karte</p>
+          <h2 class="section-title compact">Was darf es heute sein?</h2>
+          <p>Ein paar Favoriten aus der aktuellen Auswahl. Für die komplette Karte einfach weiterklicken.</p>
+          <a class="btn btn-dark" href="speisekarte.html">Komplette Speisekarte</a>
+        </div>
+
+        <div class="menu-list reveal">
+          <div class="menu-row"><div><strong>Pizza Margherita</strong><small>Tomatensauce · Mozzarella</small></div><span>ab 7,50 €</span></div>
+          <div class="menu-row"><div><strong>Pizza Gamberetti</strong><small>Shrimps · Zucchini · Cocktailtomaten · Knoblauch</small></div><span>ab 12,50 €</span></div>
+          <div class="menu-row"><div><strong>Spaghetti Scampi</strong><small>Scampi · Cocktailtomaten</small></div><span>15,90 €</span></div>
+          <div class="menu-row"><div><strong>Tagliatelle Salmone</strong><small>Lachs · Spinat</small></div><span>12,50 €</span></div>
+          <div class="menu-row"><div><strong>Gelato</strong><small>Viele Sorten zur Auswahl</small></div><span>ab 2,00 €</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split-story section" id="feiern">
+      <div class="split-story-media reveal" role="img" aria-label="Eiscafé Delfino in Neubiberg"></div>
+      <div class="split-story-copy">
+        <div class="story-inner reveal">
+          <p class="eyebrow light">Mehr als nur ein Café</p>
+          <h2>Feiern, zusammensitzen, genießen.</h2>
+          <p>Ob Geburtstag, Familienrunde oder ein besonderer Anlass: Im Delfino könnt ihr auch gemeinsam vor Ort feiern. Für Möglichkeiten und Reservierungen einfach kurz anrufen.</p>
+          <a class="btn btn-light" href="tel:+4989604061">Jetzt anrufen</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="review section">
+      <div class="container review-inner reveal">
+        <div class="review-score">
+          <strong>4,5</strong>
+          <span>★★★★★</span>
+          <small>Google-Bewertung · 460 Rezensionen*</small>
+        </div>
+        <div class="review-quote">Ein Ort für Eis, Pizza, Kaffee – und dieses Gefühl, kurz in Italien zu sein.</div>
+      </div>
+      <p class="source-note container">*Stand der öffentlich sichtbaren Google-Unternehmensdaten zum Zeitpunkt der Demo-Erstellung.</p>
+    </section>
+
+    <section class="visit section" id="besuch">
+      <div class="container visit-grid">
+        <div class="visit-image reveal" role="img" aria-label="Innenraum des Eiscafé Delfino"></div>
+        <div class="visit-card reveal">
+          <p class="eyebrow">Komm vorbei</p>
+          <h2 class="section-title compact">Dein Platz<br>in Neubiberg.</h2>
+          <div class="visit-info">
+            <div><span>Adresse</span><strong>Hauptstraße 55<br>85579 Neubiberg</strong></div>
+            <div><span>Telefon</span><a href="tel:+4989604061">089 604061</a></div>
+          </div>
+          <div class="hours">
+            <div><span>Montag</span><strong>Geschlossen</strong></div>
+            <div><span>Dienstag – Sonntag</span><strong>10:00 – 21:00</strong></div>
+          </div>
+          <div class="visit-actions">
+            <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=Eiscaf%C3%A9+Delfino+Hauptstra%C3%9Fe+55+85579+Neubiberg" target="_blank" rel="noopener">Route öffnen</a>
+            <a class="arrow-link" href="https://www.instagram.com/eiscafedelfino/" target="_blank" rel="noopener">Instagram <span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container cta-band-inner reveal">
+        <div>
+          <p class="eyebrow light">Heute Lust auf Italien?</p>
+          <h2>Einfach bestellen.<br>Später genießen.</h2>
+        </div>
+        <a class="btn btn-light btn-xl" href="bestellen.html">Online bestellen <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="brand-mark">D</span>
+        <div><strong>Delfino</strong><small>Gelateria · Pizzeria</small></div>
+      </div>
+      <div class="footer-nav">
+        <a href="speisekarte.html">Speisekarte</a>
+        <a href="tel:+4989604061">Anrufen</a>
+        <a href="https://www.instagram.com/eiscafedelfino/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Eiscafé Delfino</span>
+      <span>Hauptstraße 55 · 85579 Neubiberg</span>
+    </div>
+  </footer>
+
   <div class="mobile-orderbar single-action"><a class="mobile-order-primary" href="bestellen.html">Online bestellen</a></div>
   <script>
 (() => {
